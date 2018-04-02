@@ -18,14 +18,18 @@ also output service definitions as both `.js` and `.d.ts` files in the structure
   * `--js_out` - the standard argument to `protoc` that generates `.js` files in the specified directory
   * `--ts_out` - the params and directory to output to (`service=true` enables outputting `.js` and `.d.ts` files for use with [grpc-web](https://github.com/improbable-eng/grpc-web)).
     * **This directory must match `js_out`**
-    ```
-    protoc \
-    --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
-    --js_out=import_style=commonjs,binary:generated \
-    --ts_out=service=true:generated \
-    -I ./proto \
-    proto/*.proto
-    ```
+
+```
+protoc \
+--plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts \
+--js_out=import_style=commonjs,binary:generated \
+--ts_out=service=true:generated \
+-I ./proto \
+proto/*.proto
+```
+
+## Examples
+For a sample of the generated protos and service definitions, see [examples](https://github.com/improbable-eng/ts-protoc-gen/tree/master/examples)
 
 ## TODO
 * Add tests for extensions
