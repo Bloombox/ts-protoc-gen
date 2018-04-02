@@ -5,7 +5,7 @@ export function filePathToPseudoNamespace(filePath: string): string {
 }
 
 export function snakeToCamel(str: string): string {
-  return str.replace(/(\_\w)/g, function(m){
+  return str.replace(/(\_\w)/g, function(m) {
     return m[1].toUpperCase();
   });
 }
